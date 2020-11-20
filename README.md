@@ -1,0 +1,2 @@
+Mastermind is a game in which one player sets up a secret code made out of 4 coloured pegs, and the other player tries to figure it out by presenting their own guess. The one who made the code will then inform them how many, if any, of the other players guesses are exact matches, and how many are the right colour in wrong positions. In this project, I am going to implement this game in python so that it can be played from the commandline.
+
