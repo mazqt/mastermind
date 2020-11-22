@@ -1,4 +1,6 @@
 class Player
+  attr_accessor :lives
+
   @@peg_colours = [:R, :B, :W, :G, :Y, :P]
   def initialize()
     @lives = 12

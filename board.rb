@@ -33,4 +33,9 @@ class Board
     puts "You had #{exact_matches} exact matches and #{close_matches} close matches"
   end
 
+  def win?(guess)
+    return true if guess == @board
+    false
+  end
+
 end
