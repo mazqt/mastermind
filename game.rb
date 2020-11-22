@@ -1,5 +1,8 @@
+require './logic.rb'
 
 class Game
+  include Logic
+
   def initialize
     @board = Board.new()
     @player = Player.new()
@@ -12,7 +15,13 @@ class Game
 
       guess = @player.make_guess()
 
-      @board.match_guess(guess)
+      matches = match_guess(guess, @board.code)
+      matches = matches.split("")
+
+      exact_matches = matches.count { |peg| peg == "B" }
+      close_matches = matches.count { |peg| peg == "W" }
+
+      puts "You had #{exact_matches} exact matches and #{close_matches} close matches"
 
       if @board.win?(guess)
         puts "Congratulations! You cracked the code with #{@player.lives - 1} tries left!"
