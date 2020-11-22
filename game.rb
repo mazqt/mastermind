@@ -1,5 +1,3 @@
-require './board.rb'
-require './player.rb'
 
 class Game
   def initialize
@@ -11,14 +9,13 @@ class Game
     puts "Let's take a crack at the code!"
 
     while @player.lives > 0
-      puts "Make a guess!"
 
       guess = @player.make_guess()
 
       @board.match_guess(guess)
 
       if @board.win?(guess)
-        puts "Congratulations! You cracked the code!"
+        puts "Congratulations! You cracked the code with #{@player.lives - 1} tries left!"
         return
       end
 
